@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathVeda // High-End Educational Gateway</title>
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit for premium modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas for Floating Antigravity Particles & Studio Refractions -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Clean Studio Presentation Lighting Overlays -->
+    <div class="studio-light softbox-left"></div>
+    <div class="studio-light softbox-right"></div>
+    <div class="studio-light softbox-center"></div>
+
+    <!-- Top Navigation / Status Control -->
+    <header class="top-bar">
+        <div class="top-left-logo-container">
+            <img src="corner-logo.png" alt="PathVeda Logo" class="top-left-logo">
+        </div>
+        <div class="status-pill">
+            <span class="status-indicator"></span>
+            <span class="status-label">ANTIGRAVITY STAGE: STABLE 0.00G</span>
+        </div>
+        <div class="controls-group">
+            <button id="soundToggle" class="premium-btn-icon" title="Toggle Studio Audio" aria-label="Toggle Studio Audio">
+                <svg id="soundIconOn" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                    <path d="M11 5L6 9H2V15H6L11 19V5Z"></path>
+                    <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53"></path>
+                    <path d="M19.07 4.93C20.9447 6.80527 21.9979 9.34835 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07"></path>
+                </svg>
+                <svg id="soundIconOff" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" style="display:none;">
+                    <path d="M11 5L6 9H2V15H6L11 19V5Z"></path>
+                    <line x1="23" y1="1" x2="1" y2="23"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-stage">
+        <div class="presentation-card" id="tiltCard">
+            <!-- Subtle ambient occlusion backdrop ring -->
+            <div class="card-ambient-shadow"></div>
+            
+            <div class="card-glass-body">
+                <!-- Progress Stepper -->
+                <div class="progress-stepper" id="progressStepper">
+                    <div class="step-node active" id="node1"></div>
+                    <div class="step-line" id="line1"></div>
+                    <div class="step-node" id="node2"></div>
+                    <div class="step-line" id="line2"></div>
+                    <div class="step-node" id="node3"></div>
+                    <div class="step-line" id="line3"></div>
+                    <div class="step-node" id="node4"></div>
+                </div>
+
+                <form id="loginForm" class="login-form" onsubmit="return false;">
+                    
+                    <!-- STEP 1: IDENTITY -->
+                    <div id="step1Container" class="step-container active-step">
+                        <div class="brand-header-center">
+                            <h1 class="welcome-heading">Welcome to PathVeda</h1>
+                            <p class="welcome-subtext">High-end educational navigation. Authenticate your neural credentials.</p>
+                        </div>
+                        
+                        <div class="inputs-wrapper">
+                            <!-- Top Input Field: Name (Pill-shaped, floating weightlessly) -->
+                            <div class="floating-pill-wrapper name-pill-wrapper" id="nameWrapper">
+                                <div class="ambient-occlusion-shadow"></div>
+                                <div class="pill-glass-box">
+                                    <div class="pill-icon green-accent">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="pill-field-group">
+                                        <input type="text" id="userName" name="userName" required autocomplete="off" placeholder=" ">
+                                        <label for="userName" class="pill-floating-label">Name</label>
+                                    </div>
+                                    <div class="pill-border-highlight green-highlight"></div>
+                                </div>
+                            </div>
+
+                            <!-- Directly on Next Line Below: School (Pill-shaped, floating weightlessly) -->
+                            <div class="floating-pill-wrapper school-pill-wrapper" id="schoolWrapper">
+                                <div class="ambient-occlusion-shadow"></div>
+                                <div class="pill-glass-box">
+                                    <div class="pill-icon orange-accent">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="pill-field-group">
+                                        <input type="text" id="userSchool" name="userSchool" required autocomplete="off" placeholder=" ">
+                                        <label for="userSchool" class="pill-floating-label">School</label>
+                                    </div>
+                                    <div class="pill-border-highlight orange-highlight"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sleek Submit Pill for Step 1 -->
+                        <div class="action-pill-wrapper" id="actionWrapper1">
+                            <button type="button" class="submit-pill-btn" id="nextBtnStep1">
+                                <span class="btn-gradient-bg"></span>
+                                <span class="btn-text">CONTINUE</span>
+                                <svg class="arrow-forward" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: LOCATION -->
+                    <div id="step2Container" class="step-container" style="display: none; opacity: 0; transform: translateZ(50px) scale(0.95);">
+                        <div class="brand-header-center">
+                            <h1 class="welcome-heading">Where are you learning from?</h1>
+                            <p class="welcome-subtext">Pinpoint your global coordinates for optimized latency.</p>
+                        </div>
+                        
+                        <div class="inputs-wrapper">
+                            <!-- Location Input (Pill-shaped, floating weightlessly) -->
+                            <div class="floating-pill-wrapper location-pill-wrapper" id="locationWrapper">
+                                <div class="ambient-occlusion-shadow"></div>
+                                <div class="pill-glass-box">
+                                    <div class="pill-icon green-accent">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="pill-field-group">
+                                        <input type="text" id="userLocation" name="userLocation" required autocomplete="off" placeholder=" ">
+                                        <label for="userLocation" class="pill-floating-label">Location / City</label>
+                                    </div>
+                                    <div class="pill-border-highlight green-highlight"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sleek Submit Pill for Step 2 -->
+                        <div class="action-pill-wrapper" id="actionWrapper2" style="display: flex; gap: 15px; justify-content: center;">
+                            <button type="button" class="back-pill-btn" id="backBtnStep2" title="Go Back">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button type="button" class="submit-pill-btn" id="nextBtnStep2" style="flex: 1;">
+                                <span class="btn-gradient-bg"></span>
+                                <span class="btn-text">CONTINUE TO ACADEMICS</span>
+                                <svg class="arrow-forward" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: ACADEMIC DETAILS -->
+                    <div id="step3Container" class="step-container" style="display: none; opacity: 0; transform: translateZ(50px) scale(0.95);">
+                        <div class="brand-header-center">
+                            <h1 class="welcome-heading">Finalize your academic profile</h1>
+                            <p class="welcome-subtext">Post-synchronization phase to tailor your educational journey.</p>
+                        </div>
+                        
+                        <div class="inputs-wrapper">
+                            <!-- Top Input Field: 12th Marks (Pill-shaped, floating weightlessly) -->
+                            <div class="floating-pill-wrapper marks-pill-wrapper" id="marksWrapper">
+                                <div class="ambient-occlusion-shadow"></div>
+                                <div class="pill-glass-box">
+                                    <div class="pill-icon green-accent">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="pill-field-group">
+                                        <input type="text" id="userMarks" name="userMarks" required autocomplete="off" placeholder=" ">
+                                        <label for="userMarks" class="pill-floating-label">12th Marks (%)</label>
+                                    </div>
+                                    <div class="pill-border-highlight green-highlight"></div>
+                                </div>
+                            </div>
+
+                            <!-- Directly on Next Line Below: Your Interest (Pill-shaped, floating weightlessly) -->
+                            <div class="floating-pill-wrapper interest-pill-wrapper" id="interestWrapper">
+                                <div class="ambient-occlusion-shadow"></div>
+                                <div class="pill-glass-box dropdown-box">
+                                    <div class="pill-icon orange-accent">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                        </svg>
+                                    </div>
+                                    <div class="pill-field-group">
+                                        <select id="userInterest" name="userInterest" required>
+                                            <option value="" disabled selected hidden></option>
+                                            <option value="engineering">Engineering & Technology</option>
+                                            <option value="medical">Medical & Sciences</option>
+                                            <option value="business">Business & Commerce</option>
+                                            <option value="arts">Arts & Humanities</option>
+                                        </select>
+                                        <label for="userInterest" class="pill-floating-label">Your Interest</label>
+                                    </div>
+                                    <div class="dropdown-indicator">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="pill-border-highlight orange-highlight"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sleek Submit Pill for Step 3 -->
+                        <div class="action-pill-wrapper" id="actionWrapper3" style="display: flex; gap: 15px; justify-content: center;">
+                            <button type="button" class="back-pill-btn" id="backBtnStep3" title="Go Back">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                    <polyline points="12 19 5 12 12 5"></polyline>
+                                </svg>
+                            </button>
+                            <button type="submit" class="submit-pill-btn" id="loginBtn" style="flex: 1;">
+                                <span class="btn-gradient-bg"></span>
+                                <span class="btn-text">ACCESS LEARNING PORTAL</span>
+                                <svg class="arrow-forward" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- STEP 3: SUCCESS -->
+                <div class="success-screen step-container" id="successPortal" style="display: none;">
+                    <div class="success-badge">
+                        <svg class="check-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h2 class="success-header">PathVeda Synchronization Complete</h2>
+                    <p class="success-desc">Zero-gravity uplink established. Welcome to the future of immersive education.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Studio Presentation Footer -->
+    <footer class="presentation-footer">
+        <div class="footer-tag">PATHVEDA EDTECH // PREMIUM UX V5.2</div>
+        <div class="footer-specs">
+            <span>RES: 8K ULTRA-HD</span>
+            <span class="divider"></span>
+            <span>PHOTOREALISTIC LIGHTING</span>
+        </div>
+    </footer>
+
+    <!-- Main Dashboard Application (Hidden initially) -->
+    <main class="dashboard-stage" id="dashboardStage" style="display: none; opacity: 0;">
+        <div class="dashboard-grid">
+            <!-- Massive central focus box -->
+            <div class="dashboard-hero-card floating-hero-card">
+                <div class="hero-ambient-shadow"></div>
+                <div class="hero-card-glass">
+                    <div class="hero-stat-container">
+                        <h2 class="stat-label">Colleges Near <span id="displayCity" class="highlight-city">You</span></h2>
+                    </div>
+                    <div class="hero-accent-line"></div>
+                    <p class="hero-desc">We've cross-referenced your 12th marks and interests against real-time global admission metrics to pinpoint your optimal institutions.</p>
+                    <button class="explore-btn">
+                        <span>EXPLORE MATCHES</span>
+                        <svg class="arrow-forward" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Side Components -->
+            <div class="dashboard-side-cards">
+                <div class="data-block-card side-float-1">
+                    <div class="data-icon green-accent">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <div class="data-content">
+                        <h3 class="data-title">Admissions Probability</h3>
+                        <div class="data-value">High <span class="data-sub">87% Match</span></div>
+                    </div>
+                </div>
+
+                <div class="data-block-card side-float-2">
+                    <div class="data-icon orange-accent">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="data-content">
+                        <h3 class="data-title">Application Deadlines</h3>
+                        <div class="data-value">14 Days <span class="data-sub">Upcoming</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Institution Discovery Portal (Hidden initially) -->
+    <main class="discovery-portal" id="discoveryPortal" style="display: none; opacity: 0;">
+        
+        <div class="discovery-actions-top">
+            <button class="home-btn" id="goHomeBtn" title="Go Back to Dashboard">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 2v6h6"></path>
+                    <path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path>
+                </svg>
+                <span>UNDO</span>
+            </button>
+        </div>
+
+        <div class="discovery-notification">
+            <span class="pulse-dot"></span>
+            Global Database Synchronized: 50,000+ Colleges Loaded
+        </div>
+        
+        <div class="discovery-header">
+            <h1 class="discovery-title">Top Tier Matches</h1>
+            <p class="discovery-subtitle">Curated specifically for your profile in <span id="discoveryCity" class="highlight-city">your area</span></p>
+        </div>
+
+        <div class="college-cards-container" id="dynamicCollegeContainer">
+            <!-- Dynamic Hero Match & Ranked List injected via JS -->
+        </div>
+
+        <!-- Scroll Indicator Button -->
+        <button class="scroll-down-btn" id="scrollDownBtn" title="Scroll down">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </main>
+
+    <!-- Veda AI Assistant Interface -->
+    <div class="veda-ai-container" id="vedaAI">
+        <button class="veda-trigger-btn" id="vedaTrigger" title="Ask Veda AI">
+            <div class="veda-glow-pulse"></div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                <path d="M12 12L2.69 7"></path>
+                <path d="M12 12l5.63 8.36"></path>
+            </svg>
+            <span class="veda-label">VEDA</span>
+        </button>
+
+        <div class="veda-chat-window" id="vedaChatWindow">
+            <div class="veda-header">
+                <div class="veda-header-info">
+                    <span class="veda-status-dot"></span>
+                    <h3>VEDA AI</h3>
+                    <p>Powered by Gemini</p>
+                </div>
+                <button class="veda-close-btn" id="vedaClose">&times;</button>
+            </div>
+            <div class="veda-messages" id="vedaMessages">
+                <div class="message veda-msg">
+                    Greetings! I am Veda, powered by Gemini's intelligence. How can I illuminate your educational path today?
+                </div>
+            </div>
+            <div class="veda-input-area">
+                <input type="text" id="vedaInput" placeholder="Ask about colleges, careers, or studies..." autocomplete="off">
+                <button id="vedaSend">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Physics & Audio Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
